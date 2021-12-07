@@ -42,12 +42,10 @@ public class Player : MonoBehaviour
             if (Cursor.lockState == CursorLockMode.Locked)
             {
                 Cursor.lockState = CursorLockMode.None;
-                Debug.Log(Cursor.lockState);
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                Debug.Log(Cursor.lockState);
             }
         }
     }
