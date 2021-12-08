@@ -9,15 +9,15 @@ public class Health : MonoBehaviour
     private int _maxHealth;
     [SerializeField]
     private int _minHealth;
-    public int currentHealth;
-
+    [SerializeField]
     private Slider _slider;
+
+    public int currentHealth;
     
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = _maxHealth;
-        _slider = GameObject.Find("Health Bar").GetComponent<Slider>();
         _slider.maxValue = _maxHealth;
         HealthBar();
     }
