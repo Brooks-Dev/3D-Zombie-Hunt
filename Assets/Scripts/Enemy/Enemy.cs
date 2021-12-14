@@ -11,9 +11,14 @@ public class Enemy : MonoBehaviour
         Attack
     }
 
-    private CharacterController _controller;
+    public EnemyState currentState = EnemyState.Chase;
+    private float _coolDown = 1.5f;
+    private float _timer;
+
     private GameObject _player;
     private Health _playerHealth;
+
+    private CharacterController _controller;
 
     [Header("Controller settings")]
     [SerializeField]
@@ -25,10 +30,6 @@ public class Enemy : MonoBehaviour
     private float _gravity = -9.8f;
     private Vector3 _velocity;
 
-    [SerializeField]
-    private EnemyState _currentState = EnemyState.Chase;
-    private float _coolDown = 1.5f;
-    private float _timer;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (_currentState)
+        switch (currentState)
         {
             case EnemyState.Chase:
                 EnemyMove();
@@ -79,7 +80,9 @@ public class Enemy : MonoBehaviour
         _velocity.y += _gravity * Time.deltaTime;
         if (_player != null)
         {
-            transform.LookAt(_player.transform);
+            Vector3 lookPos = _player.transform.position;
+            lookPos.y = 1.59f;
+            transform.LookAt(lookPos);
         }
         _controller.Move(_velocity * Time.deltaTime);
     }
@@ -91,18 +94,5 @@ public class Enemy : MonoBehaviour
             _playerHealth.Damage(20);
             _timer = Time.time + _coolDown;
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            _currentState = EnemyState.Attack;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        _currentState = EnemyState.Chase;
     }
 }

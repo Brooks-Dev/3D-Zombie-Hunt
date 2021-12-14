@@ -491,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e8dd6ebc1aa9e40a43035e592b0776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bloodPrefab: {fileID: 8729043021112652020, guid: 819c6268a8e154147984aa729b6f126b, type: 3}
 --- !u!114 &648983198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,6 +1472,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2098186089807165676, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
+      propertyPath: m_Height
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098186089807165676, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
+      propertyPath: m_Radius
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3985797981278939708, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1518,6 +1527,18 @@ PrefabInstance:
     - target: {fileID: 5313564032626473475, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313564032626473475, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488170814125481560, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
+      propertyPath: _speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488170814125481560, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
+      propertyPath: _groundDetect
+      value: 1.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a666661493f1314c89b63b9023d5819, type: 3}
